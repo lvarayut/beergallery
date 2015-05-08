@@ -4,6 +4,9 @@ var express = require('express'),
     bodyParser = require('body-parser'),
     mongoose = require('mongoose');
 
+mongoose.connect('mongodb://localhost/bg');
+require('./server/models/beer')
+
 app.use(express.static(__dirname + '/public'));
 app.use('/bower_components', express.static(__dirname + '/bower_components'));
 

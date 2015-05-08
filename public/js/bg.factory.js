@@ -16,7 +16,8 @@
         return beerFac;
 
         function get() {
-            return $http.get('data/beer.json').then(function(res) {
+            return $http.get('/api/v1/beers').then(function(res) {
+                console.log
                 return res.data;
             });
         }
