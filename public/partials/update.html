@@ -1,1 +1,27 @@
-<h1>Update</h1>
+<h1>Update beer</h1>
+<hr>
+
+<form data-ng-submit="beerCtrl.update()">
+    <div class="form-group col-sm-6">
+        <label>Name</label>    
+        <input class="form-control" data-ng-model="beerCtrl.updatedBeer.name"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Detail</label>    
+        <input class="form-control" data-ng-model="beerCtrl.updatedBeer.detail"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Image path</label>    
+        <input class="form-control" data-ng-model="beerCtrl.updatedBeer.imagePath"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Abv</label>    
+        <input class="form-control" data-ng-model="beerCtrl.updatedBeer.abv"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Country</label>    
+        <input class="form-control" data-ng-model="beerCtrl.updatedBeer.country.name"></input>
+    </div>
+    <div class="clearfix"></div>
+    <button class="btn btn-success pull-right">Update <i class="glyphicon glyphicon-plus"></i></button>
+</form>
