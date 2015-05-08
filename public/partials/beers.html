@@ -1,1 +1,11 @@
-<h1>Beers</h1>
+<div class="col-sm-6 col-md-4" data-ng-repeat='beer in beerCtrl.beers'>
+    <div class="thumbnail">
+        <img height="300" width="300" data-ng-src="{{ beer.imagePath }}" alt="{{ beer.name }}">
+        <div class="caption">
+            <h3>{{ beer.name }}</h3>
+            <p>{{ beer.detail }}</p>
+            <p>Country: {{ beer.country.name }} / Abv: {{ beer.abv }}%</p>
+            <p><a data-ng-href="#/beer/{{ beer.id }}" class="btn btn-primary" role="button">Edit</a></p>
+        </div>
+    </div>
+</div>
