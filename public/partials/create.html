@@ -1,1 +1,27 @@
-<h1>Create</h1>
+<h1>Create new beer</h1>
+<hr>
+
+<form data-ng-submit="beerCtrl.add()">
+    <div class="form-group col-sm-6">
+        <label>Name</label>    
+        <input class="form-control" data-ng-model="beerCtrl.newBeer.name"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Detail</label>    
+        <input class="form-control" data-ng-model="beerCtrl.newBeer.detail"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Image path</label>    
+        <input class="form-control" data-ng-model="beerCtrl.newBeer.imagePath"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Abv</label>    
+        <input class="form-control" data-ng-model="beerCtrl.newBeer.abv"></input>
+    </div>
+    <div class="form-group col-sm-6">
+        <label>Country</label>    
+        <input class="form-control" data-ng-model="beerCtrl.newBeer.country.name"></input>
+    </div>
+    <div class="clearfix"></div>
+    <button class="btn btn-success pull-right">Add <i class="glyphicon glyphicon-plus"></i></button>
+</form>

@@ -11,6 +11,7 @@
         var vm = this;
 
         vm.isActivePath = isActivePath;
+        vm.add = add;
 
         init();
 
@@ -22,6 +23,12 @@
 
         function isActivePath(path) {
             return $location.path() === path;
+        }
+
+        function add() {
+            vm.beers = Beer.add(vm.beers, vm.newBeer);
+            vm.newBeer = null;
+            $location.path('/beers');
         }
     }
 })();

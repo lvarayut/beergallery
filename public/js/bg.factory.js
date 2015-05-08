@@ -9,7 +9,8 @@
 
     function Beer($http) {
         var beerFac = {
-            get: get
+            get: get,
+            add: add
         };
 
         return beerFac;
@@ -18,6 +19,12 @@
             return $http.get('data/beer.json').then(function(res) {
                 return res.data;
             });
+        }
+
+        function add(beers, newBeer) {
+            newBeer.id = beers.length + 1;
+            beers.push(newBeer)
+            return beers;
         }
     }
 })();
