@@ -24,8 +24,10 @@
 
         function add(beers, newBeer) {
             newBeer.id = beers.length + 1;
-            beers.push(newBeer)
-            return beers;
+            return $http.post('/api/v1/beer/create', newBeer).then(function(res){
+                beers.push(res.data);
+                return beers;
+            });
         }
     }
 })();

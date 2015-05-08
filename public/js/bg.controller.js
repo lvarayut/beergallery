@@ -29,9 +29,11 @@
         }
 
         function add() {
-            vm.beers = Beer.add(vm.beers, vm.newBeer);
-            vm.newBeer = null;
-            $location.path('/beers');
+            Beer.add(vm.beers, vm.newBeer).then(function(beers){
+                vm.beers = beers;
+                vm.newBeer = null;
+                $location.path('/beers');
+            });
         }
 
         function prepareUpdate(beer) {

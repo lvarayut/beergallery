@@ -8,4 +8,5 @@ module.exports = function(app) {
     });
 
     app.get('/api/v1/beers', ctrl.getBeers);
+    app.post('/api/v1/beer/create', ctrl.createBeer);
 }
