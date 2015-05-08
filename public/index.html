@@ -17,7 +17,7 @@
     <![endif]-->
 </head>
 
-<body data-ng-app="bg" data-ng-strict-di data-ng-controller="BeerController">
+<body data-ng-app="bg" data-ng-strict-di data-ng-controller="BeerController as beerCtrl">
     <!--  .navbar-default navbar-fixed-top -->
     <nav class="navbar-default navbar-fixed-top navbar-inverse">
         <div class="container">
@@ -27,14 +27,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">Beer Gallery</a>
+                <a class="navbar-brand" href="#/">Beer Gallery</a>
             </div>
             <!--  .navbar -->
             <div class="navbar-collapse collapse" id="navbar">
                 <ul class="nav navbar-nav navbar-right">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#about">Beers</a></li>
-                    <li><a href="#about">About</a></li>
+                    <li data-ng-class="{active: beerCtrl.isActivePath('/')}"><a href="#/">Home</a></li>
+                    <li data-ng-class="{active: beerCtrl.isActivePath('/beers')}"><a href="#beers">Beers</a></li>
+                    <li data-ng-class="{active: beerCtrl.isActivePath('/about')}"><a href="#about">About</a></li>
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">John Doe <span class="caret"></span></a>
                         <ul class="dropdown-menu">
@@ -48,20 +48,15 @@
     </nav>
     <!--  .navbar-default navbar-fixed-top -->
     <div class="container">
-        <div class="jumbotron">
-            <h1>Beer Gallery</h1>
-            <p>This gallery contains a lot of beers brands collected from multiple continents around the world. It'll show you a precise detial of the beer along with a beautiful image.</p>
-            <p>Ready? Let's find one that you really love by clicking the following button.</p>
-            <p>
-                <a class="btn btn-lg btn-primary" href="#" role="button">Check it out! »</a>
-            </p>
-        </div>
+        <data-ng-view></data-ng-view>
     </div>
     <script type="text/javascript" src="../bower_components/jquery/dist/jquery.min.js"></script>
     <script type="text/javascript" src="../bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="../bower_components/angular-route/angular-route.min.js"></script>
     <script type="text/javascript" src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="./js/app.js"></script>
     <script type="text/javascript" src="./js/bg.controller.js"></script>
+    <script type="text/javascript" src="./js/bg.route.js"></script>
 </body>
 
 </html>
