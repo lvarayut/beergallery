@@ -10,7 +10,9 @@
     function Beer($http) {
         var beerFac = {
             get: get,
-            add: add
+            add: add,
+            update: update,
+            del: del
         };
 
         return beerFac;
@@ -27,6 +29,18 @@
             return $http.post('/api/v1/beer/create', newBeer).then(function(res){
                 beers.push(res.data);
                 return beers;
+            });
+        }
+
+        function update(beer) {
+            return $http.post('/api/v1/beer/update', beer).then(function(res){
+                return beer;
+            });
+        }
+
+        function del(beer) {
+            return $http.post('/api/v1/beer/delete', beer).then(function(res){
+                return beer;
             });
         }
     }

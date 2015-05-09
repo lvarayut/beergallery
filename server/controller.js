@@ -25,3 +25,25 @@ module.exports.createBeer = function(req, res) {
         return res.json(beer);
     });
 };
+
+module.exports.updateBeer = function(req, res) {
+    var beer = req.body;
+    Beer.findOneAndUpdate({ _id: beer._id }, beer, function(err, beer){
+        if(err) {
+            console.log(err);
+            return res.sendStatus(500);
+        }
+        return res.json(beer);
+    });
+};
+
+module.exports.deleteBeer = function(req, res) {
+    var beer = req.body;
+    Beer.findOneAndRemove({ _id: beer._id }, function(err, beer){
+        if(err) {
+            console.log(err);
+            return res.sendStatus(500);
+        }
+        return res.json(beer);
+    });
+};

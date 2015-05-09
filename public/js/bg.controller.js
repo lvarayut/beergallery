@@ -42,11 +42,15 @@
         }
 
         function update() {
-            $location.path('/beers');
+            Beer.update(vm.updatedBeer).then(function(beer){
+                $location.path('/beers');
+            });
         }
 
         function del(index) {
-            vm.beers.splice(index, 1);
+            Beer.del(vm.beers[index]).then(function(beer){
+                vm.beers.splice(index, 1);
+            });
         }
     }
 })();
